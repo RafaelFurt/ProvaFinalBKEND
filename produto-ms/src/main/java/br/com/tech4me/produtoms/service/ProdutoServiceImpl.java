@@ -14,7 +14,6 @@ import br.com.tech4me.produtoms.repository.ProdutoRepositorio;
 
 @Service
 public class ProdutoServiceImpl implements ProdutoService {
-    
     @Autowired
     private ProdutoRepositorio repo;
 
@@ -26,15 +25,17 @@ public class ProdutoServiceImpl implements ProdutoService {
     @Override
     public List<ProdutoDto> obterTodos(){
         List<Produto> produtos = repo.findAll();
-         return produtos.stream()
-         .map(produto -> new ModelMapper().map(produto,ProdutoDto.class))
-         .collect(Collectors.toList());
+
+        return produtos.stream()
+            .map(produto -> new ModelMapper().map(produto,ProdutoDto.class))
+            .collect(Collectors.toList());
 
     }
 
     @Override
     public Optional<ProdutoDto> obterPorId(String id){
         Optional<Produto> produto = repo.findById(id);
+        
         if(produto.isPresent()){
             return Optional.of(new ModelMapper().map(produto.get(),ProdutoDto.class));
         }

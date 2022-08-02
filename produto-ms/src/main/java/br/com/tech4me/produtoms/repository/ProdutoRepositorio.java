@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 import br.com.tech4me.produtoms.model.Produto;
 
 @Repository
-public interface ProdutoRepositorio extends MongoRepository <Produto, String> {
+public interface ProdutoRepositorio extends MongoRepository<Produto, String> {
     
     List<Produto> findByCodigo(String codigo);
+    
 }
