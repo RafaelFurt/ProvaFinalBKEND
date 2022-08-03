@@ -5,17 +5,14 @@ import javax.validation.constraints.NotEmpty;
 
 public class ProdutoModeloInclusao {
 
+    private String id;
     @NotBlank(message = "O nome não pode estar em branco")
     @NotEmpty(message = "O nome não pode estar vazio")
     private String nome;
     @NotBlank(message = "O codigo não pode estar em branco")
     @NotEmpty(message = "O codigo não pode estar vazio")
     private String codigo;
-    @NotBlank(message = "O preço não pode estar em branco")
-    @NotEmpty(message = "O preço não pode estar vazio")
-    private float preco;
-    @NotBlank(message = "A quantidade não pode estar em branco")
-    @NotEmpty(message = "A quantidade não pode estar vazia")
+    private double preco;
     private Integer estoque;
 
     public String getNome() {
@@ -30,10 +27,10 @@ public class ProdutoModeloInclusao {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
     public Integer getEstoque() {
@@ -41,5 +38,11 @@ public class ProdutoModeloInclusao {
     }
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 }

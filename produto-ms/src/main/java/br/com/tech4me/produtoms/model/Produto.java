@@ -10,7 +10,7 @@ public class Produto {
     private String id;
     private String nome;
     private String codigo;
-    private float preco;
+    private double preco;
     private Integer estoque;
     
     public String getId() {
@@ -31,10 +31,10 @@ public class Produto {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
     public Integer getEstoque() {

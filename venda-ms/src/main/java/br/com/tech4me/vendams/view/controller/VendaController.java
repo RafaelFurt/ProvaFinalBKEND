@@ -36,7 +36,7 @@ public class VendaController {
         return String.format("Serviço ativo e executando na porta %s", porta);
     }
 
-    @PostMapping(value ="/{nome}/{quantidade}")
+    @PostMapping(value ="/{quantidade}")
     public ResponseEntity<VendaModeloResponse> lancarVenda(@PathVariable @RequestBody @Valid VendaModeloRequest venda, String nome, Integer quantidade ){
         ModelMapper mapper = new ModelMapper();
         VendaDto dto = mapper.map(venda,VendaDto.class);
